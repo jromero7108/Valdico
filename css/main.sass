@@ -1,36 +1,37 @@
-// Blackparadox
-// Estilos: 2020
-// Versión: 1.0.1
+//valdicoPerez y Asociados
+//estilos 2017
+//Version 1.0.1
 
-// Variables de colores
-$base: #060a0f
-$sec: #494949
+//Variables de entorno
+	
+$base:#060a0f
+$sec: #694947
 $outline: #ff6600
-$text: transparentize($sec, .5)
+$text: transparentize($sec,.5)
 
-////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////
-// Estilos generales
-////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////
+//Estilos Generales
 
 a
 	margin: 0px
 	padding: 0px
 	@extend .tSlow
-	&:hover
-		color: $outline
-h1, h2, h3, h4, h5, h6
+	&:hover	
+		color: $outline	
+h1, h2, h3, h4, h5 ,h6
 	color: $base
 p
 	color: $sec
+
 .tSlow
-	-webkit-transition: all 0.5s ease-in-out
-	-o-transition: all 0.5s ease-in-out
-	transition: all 0.5s ease-in-out
+	-webkit-transition: .5s ease
+	-o-transition: .5s ease
+	transition: .5s ease
 
 .pad_100
-	padding: 200px 0%
+	padding: 100px 0px
+
+.pad_250
+	padding: 100px 0px
 
 .center
 	text-align: center
@@ -41,16 +42,19 @@ p
 	font-weight: bold
 	color: $base
 
+.text-left
+	text-align: right
+	margin: 0px auto
 
+	/////////////////////////////////////////////////////
+////////////////////////////////////////////////////
+//Estilos de inputs, textarea, buttons////////////////////////////
+///////////////////////////////////////////////////
+///////////////////////////////////////////////////
 
-////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////
-// Estilos de los inputs, textarea, buttons
-////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////
 input,
 select,
-option, 
+option,
 textarea
 	width: 100%
 	padding: 10px 15px
@@ -62,7 +66,6 @@ textarea
 	&:focus
 		opacity: 1
 		color: $base
-
 textarea
 	max-width: 100%
 	min-width: 100%
@@ -85,7 +88,6 @@ button
 		opacity: 1
 		background-color: $base
 		color: white
-
 .black
 	background-color: $base
 	opacity: 1
@@ -94,31 +96,28 @@ button
 		background-color: $outline
 		border: 1px solid $outline
 
-////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////
-// Imágenes del sitio
-////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////
+//Imagenes del sitio////////////////////////////
+///////////////////////////////////////////////////
 .servicio-img
 	width: 250px
 	height: 250px
 	@extend .rombo
-
 .rombo
-	-webkit-clip-path: polygon(50% 0% , 100% 50%, 50% 100%, 0% 50%)
-	-o-clip-path: polygon(50% 0% , 100% 50%, 50% 100%, 0% 50%)
-	clip-path: polygon(50% 0% , 100% 50%, 50% 100%, 0% 50%)
+	-webkit-clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%)
+	-o-clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%)
+	clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%)
 	@extend .tSlow
 	&:hover
-		clip-path: polygon(100% 0% , 100% 100%, 0% 100% , 0% 0%)
-
+		clip-path: polygon(100% 0%, 100% 100%, 0% 100%, 0% 0%)
+	
 .diamante
 	display: block
 	position: relative
 	width: 100%
 	overflow: hidden
 	margin: 0px auto
-	background-image: url("../images/square_01.jpg")
+	background-image: url(../images/rombo.jpg)
 	background-size: 100%
 	background-position: center center
 	background-repeat: no-repeat
@@ -126,24 +125,22 @@ button
 	z-index: 50
 
 
-////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////
-// Estilos de la barra de navegación
-////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////
+//Estilos de barra de navegacion
+
 nav
 	width: 100%
-	background-color: transparent
+	background-color: transparentize
 	padding: 10px 0px
 	position: fixed
-	border-bottom: 1px solid transparent
+	border-bottom: 1px solid red//transparent
 	z-index: 100
 	@extend .tSlow
-	// Animación de la barra al hacer hover
+	//Animacion de la barra de navegacion
 	&:hover
-		background-color: white
-		padding: 10px 0px
-		border-bottom: 1px solid transparentize($base, .9)
+		//background-color: white
+		background-color: transparentize(white,.1)
+		padding: 25px 0px
+		border-bottom: 1px solid transparentize($base,.9)
 		.logo
 			img
 				width: 80%
@@ -155,9 +152,8 @@ nav
 	//////////////////////////
 	.logo
 		img
-			width: 60%
+			width: 80%
 			@extend .tSlow
-
 	ul
 		margin: 0px
 		margin-top: 12px
@@ -169,17 +165,17 @@ nav
 				color: $base !important
 				&:after
 					width: 100%
-					background-color: $base
+					background-color: black
 					@extend .tSlow
 		li
 			display: inline-block
-			padding: 0px 5px
+			padding: 0px 10px
 			a
 				position: relative
 				text-decoration: none
 				font-size: 16px
 				text-transform: uppercase
-				color: transparentize(white, .2)
+				color: transparentize(black,.2)
 				@extend .tSlow
 				&:before
 					content: ''
@@ -207,75 +203,58 @@ nav
 						width: 100%
 						background-color: $base
 
-
 .nav-overlay
 	background-color: white
-	border-bottom: 1px solid transparentize($base, .9)
+	border-bottom: 1px solid transparentize($base,.9)
 	padding: 25px 0px
-	.logo
+	.logo	
 		img
-			width: 50%
+			width: 100%
 	ul
 		margin-top: 8px
 		li
 			a
 				color: $text
 
-///////////////////////////////////////
-///////////////////////////////////////
-// ESTILOS SLIDER SLIPPRY
-///////////////////////////////////////
-///////////////////////////////////////
+/////////////////////////////////////////////////////
+////////////////////////////////////////////////////
+//Estilos slider slippry////////////////////////////
+///////////////////////////////////////////////////
+///////////////////////////////////////////////////
 
 #slider
 	backface-visibility: hidden
-	-webkit-clip-path: polygon(100% 0% , 100% 100% , 50% 85% , 0% 100% , 0% 0%)
-	-o-clip-path: polygon(100% 0% , 100% 100% , 50% 85% , 0% 100% , 0% 0%)
-	clip-path: polygon(100% 0% , 100% 100% , 50% 85% , 0% 100% , 0% 0%)
+	-webkit-clip-path: polygon(100% 0%, 100% 100%, 50% 85%, 0% 100%, 0% 0%)
+	-o-clip-path: polygon(100% 0%, 100% 100%, 50% 85%, 0% 100%, 0% 0%)
+	clip-path: polygon(100% 0%, 100% 100%, 50% 85%, 0% 100%, 0% 0%)  
 
 #slippry
 	position: relative
-	h1, h2, h3, h4, h5, h6, p, a, button, small
+	h1, h2, h3, h4, h5, h6, p, a, button
 		position: absolute
 	p
 		width: 600px
 	.white_bg
-		background-color: transparentize(white, .3)
+		background-color: transparentize(white,.2 )
 		padding: 5px 10px
-
 	.left
 		left: 200px
 	.right
 		right: 200px
-	.top_180
-		top: 180px
-	.top_200
-		top: 200px
-	.top_230
-		top: 230px
 	.top_250
 		top: 250px
-	.top_280
-		top: 280px
 	.top_300
 		top: 300px
 	.top_375
 		top: 375px
 	.top_400
 		top: 400px
-	.top_410
-		top: 410px
-	.top_440
-		top: 440px
 	.top_450
 		top: 450px
 
-
-////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////
-// Estilos del Portafolio
-////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////
+//Estilos de portafolios////////////////////////////
+///////////////////////////////////////////////////
 .grid
 	width: 100%
 	padding: 150px 0px
@@ -283,6 +262,7 @@ nav
 		content: ''
 		display: block
 		clear: both
+		
 
 .grid-item
 	width: 20%
@@ -291,9 +271,9 @@ nav
 	float: left
 	position: relative
 	background-color: white
-	-webkit-clip-path: polygon(50% 0% , 100% 50%, 50% 100%, 0% 50%)
-	-o-clip-path: polygon(50% 0% , 100% 50%, 50% 100%, 0% 50%)
-	clip-path: polygon(50% 0% , 100% 50%, 50% 100%, 0% 50%)
+	-webkit-clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%)
+	-o-clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%)
+	clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%)
 	cursor: pointer
 	margin-top: -90px
 	@extend .tSlow
@@ -317,7 +297,7 @@ nav
 		&:before
 			content: ''
 			position: absolute
-			background-color: transparentize($outline, .4)
+			background-color: transparentize($outline,.2)
 			background-image: url("../images/cross.png")
 			background-repeat: no-repeat
 			background-size: 30%
@@ -355,28 +335,25 @@ nav
 			background-color: white
 	
 
+		
 
-
-
-////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////
-// Footer y estilos
-////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////
+//Footer y estilos      ////////////////////////////
+///////////////////////////////////////////////////
 
 footer
-	margin-top: -60px
+	margin-top:  -60px
 	width: 100%
 	background-color: $base
 	padding: 70px 0px
-	-webkit-clip-path: polygon(0% 15% , 50% 0% , 100% 15% , 100% 100%, 0% 100%)
-	-o-clip-path: polygon(0% 15% , 50% 0% , 100% 15% , 100% 100%, 0% 100%)
-	clip-path: polygon(0% 15% , 50% 0% , 100% 15% , 100% 100%, 0% 100%)
+	-webkit-clip-path: polygon(0% 15%, 50% 0%, 100% 15%, 100% 100%, 0% 100%)
+	-o-clip-path: polygon(0% 15%, 50% 0%, 100% 15%, 100% 100%, 0% 100%)
+	clip-path: polygon(0% 15%, 50% 0%, 100% 15%, 100% 100%, 0% 100%)
 	p
 		margin: 0px
 		padding: 0px
 	.white
-		color: transparentize(white, .6)
+		color: transparentize(white,.6 )
 	ul
 		padding: 0px
 		margin: 0px
@@ -384,10 +361,10 @@ footer
 		li
 			padding: 0px
 			margin: 0px
-			color: transparentize(white, .8)
+			color: transparentize(white,.8 )
 	hr
 		border-radius: 10px
-		background-color: transparentize(white, .92)
+		background-color: transparentize(white,.9 )
 .tumblr
 	position: relative
 	float: left
@@ -396,17 +373,17 @@ footer
 	width: 20%
 	cursor: pointer
 	opacity: .7
-	@extend .tSlow	
+	@extend .tSlow
 	&:hover
 		opacity: 1
 .copy
 	padding: 10px 0px
-	background-color: lighten($base, 1)
+	background-color: lighten($base,1)
 	text-align: left
 	p, a
 		margin: 0px
 		padding: 0px
-		color: transparentize(white, .7)
+		color: transparentize(white,.7)
 	a
 		opacity: .5
 		color: $outline
@@ -431,13 +408,13 @@ footer
 		backface-visibility: hidden
 		cursor: pointer
 		@extend .tSlow
-		i
+		i	
 			font-size: 22px
-			color: transparentize(white, .8)
-			-webkit-transform: ratate(0deg) translate(-3px , 3px)
-			-ms-transform: ratate(0deg) translate(-3px , 3px)
-			-o-transform: ratate(0deg) translate(-3px , 3px)
-			transform: ratate(0deg) translate(-3px , 3px)
+			color: transparentize(white,.8)
+			-webkit-transform: rotate(0deg) translate(-3px 3px)
+			-ms-transform: rotate(0deg) translate(-3px 3px)
+			-o-transform: rotate(0deg) translate(-3px 3px)
+			transform: rotate(0deg) translate(-3px 3px)
 			backface-visibility: hidden
 			@extend .tSlow
 		&:hover
@@ -452,20 +429,16 @@ footer
 				-webkit-transform: rotate(-45deg) translate(-3px , 3px)
 				-ms-transform: rotate(-45deg) translate(-3px , 3px)
 				-o-transform: rotate(-45deg) translate(-3px , 3px)
-				transform: rotate(-45deg) translate(-3px , 3px)
+				transform: rotate(-45deg) translate(-3px , 3px)	
 
-//[class*="col-"]
-//	float: left
-//	border: 1px solid red
-//	padding: 1px
+.seccion
+	ul
+		li	
+			list-style: none
+			font-size: 20px
+			color: blue
+	p
+		font-size: 20px
+		color: blue
 
-//
 
-
-.cartas
-	font-size: 40px
-	color: red
-
-.contacto-dat
-	list-style: none
-	padding: 10px
